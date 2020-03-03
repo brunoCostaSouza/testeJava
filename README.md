@@ -16,9 +16,11 @@ Para instalar e deixar a API rodando é muito simples :) Você so precisa de qua
 ```
 git clone https://github.com/brunoCostaSouza/testeJava.git
 cd testeJava/project
-docker-compose up
+docker-compose up -d
 ./mvnw spring-boot:run
 ```
+
+Aguarde até o maven baixar todas dependências
 
 Pronto, Sua API estará rodando em http://localhost:8080/
 
