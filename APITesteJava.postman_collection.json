@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "bca305e7-f1fb-4268-bf2e-bfd23d87cf52",
+		"name": "API Teste Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}",
+					"host": [
+						"{{path}}"
+					]
+				},
+				"description": "Recupera a lista de todos clientes paginada"
+			},
+			"response": []
+		},
+		{
+			"name": "search cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}/search?nome=&cpf=&page=&size=",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": ""
+						},
+						{
+							"key": "cpf",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": ""
+						},
+						{
+							"key": "size",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"teste\",\n    \"cpf\": \"28979609655\",\n    \"dataNascimento\": \"1995-04-20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{path}}",
+					"host": [
+						"{{path}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{path}}/{{cpf}}",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"{{cpf}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update cliente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"teste-alterado\",\n    \"cpf\": \"28979609655\",\n    \"dataNascimento\": \"1994-04-25\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{path}}/{id}",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update cliente",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"teste-alterado\",\n    \"cpf\": \"28979609655\",\n    \"dataNascimento\": \"1994-04-25\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{path}}?id=1&nome&cpf&dataNascimento=10/10/2020",
+					"host": [
+						"{{path}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "nome",
+							"value": null
+						},
+						{
+							"key": "cpf",
+							"value": null
+						},
+						{
+							"key": "dataNascimento",
+							"value": "10/10/2020"
+						}
+					]
+				},
+				"description": "Altera o nome, cpf, data de nascimento (dd/MM/yyyy)"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
