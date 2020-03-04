@@ -11,6 +11,7 @@ Você precisa ter instalado na sua máquina:
 - Obs: A variável de ambiente JAVA_HOME deve está configurada. 
 
 Instalação
+
 Para instalar e deixar a API rodando é muito simples :) Você so precisa de quatro comandos...
 
 ```
